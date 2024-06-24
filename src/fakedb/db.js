@@ -51,3 +51,30 @@ export const postData = [
     published_date: "Mon, 24 June,2024",
   },
 ];
+
+export const groupData = [
+  {
+    groupId: 1,
+    groupTitle: "Leisure",
+    groupImge: "https://iili.io/d2pAYHQ.png",
+    following: false,
+  },
+  {
+    groupId: 2,
+    groupTitle: "Activism",
+    groupImge: "https://iili.io/d2pA5Ux.png",
+    following: false,
+  },
+  {
+    groupId: 3,
+    groupTitle: "MBA",
+    groupImge: "https://iili.io/d2pARlj.png",
+    following: false,
+  },
+  {
+    groupId: 4,
+    groupTitle: "Philosophy",
+    groupImge: "https://iili.io/d2pAYHQ.png",
+    following: false,
+  },
+];

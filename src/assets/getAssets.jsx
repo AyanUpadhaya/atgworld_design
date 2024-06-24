@@ -12,6 +12,13 @@ import dotgroup from "./imags/dotgroup.png";
 import location from "./imags/location.png";
 import eventicon from "./imags/eventicon.png";
 import bag from "./imags/bag.png";
+import editicon from "./imags/editicon.png";
+import closeicon from "./imags/closeicon.png";
+import authImage from "./imags/authImage.png";
+import google from "./imags/google.png";
+import facebook from "./imags/facebook.png";
+import leave from "./imags/leave.png";
+
 export {
   banner,
   logo,
@@ -26,5 +33,11 @@ export {
   dotgroup,
   location,
   eventicon,
-  bag
+  bag,
+  closeicon,
+  editicon,
+  authImage,
+  google,
+  facebook,
+  leave,
 };

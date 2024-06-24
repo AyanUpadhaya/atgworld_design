@@ -9,7 +9,7 @@ import "./Main.css";
 
 const EventPost = ({ post }) => {
   return (
-    <div className="card post-card">
+    <div className="card post-card drop-shadow-custom">
       <div className="card-top">
         <img src={post?.coverImage} className="img-fluid" alt="post-cover" />
       </div>
@@ -88,15 +88,23 @@ const EventPost = ({ post }) => {
               className="post-author-image"
               alt=""
             />
-            <h5 className="post-author-name">{post?.postAuthorName}</h5>
+            <div>
+              <h5 className="post-author-name">{post?.postAuthorName}</h5>
+              <div className="d-flex d-md-none gap-2 align-items-center">
+                <div>
+                  <img src={visibility} className="visibility-icon" alt="" />
+                </div>
+                <div className="view-count-text  ">{post?.viewCount} views</div>
+              </div>
+            </div>
           </div>
           {/* view and share */}
           <div className="d-flex justify-content-between gap-40">
-            <div className="d-flex gap-2 align-items-center">
+            <div className="d-none d-md-flex gap-2 align-items-center">
               <div>
                 <img src={visibility} className="visibility-icon" alt="" />
               </div>
-              <div className="view-count-text ">{post?.viewCount}</div>
+              <div className="view-count-text  ">{post?.viewCount} views</div>
             </div>
             <div>
               <img src={share} className="share-icon" alt="" />
