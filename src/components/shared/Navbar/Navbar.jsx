@@ -1,6 +1,8 @@
 import { dropdown, logo, search } from '../../../assets/getAssets';
+import useAuth from '../../../hooks/useAuth';
 import './Navbar.css'
 const Navbar = () => {
+  const { isAuthenticated } = useAuth();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top ">
@@ -8,18 +10,31 @@ const Navbar = () => {
           <a className="navbar-brand" href="#">
             <img src={logo} alt="" />
           </a>
-          <button
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            className="btn create-account-btn d-lg-none"
-          >
-            <div>
-              <span>Create account. </span>
-            </div>
 
-            <img src={dropdown} alt="" />
-          </button>
+          {isAuthenticated ? (
+            <div className="d-flex gap-1 align-items-center d-lg-none">
+              <div className="d-flex align-items-center gap-1">
+                <div>
+                  <img src="https://iili.io/d33XaVI.png" alt="" />
+                </div>
+                <div className="authenticatedUserName">Siddharth Goyal</div>
+              </div>
+              <img src={dropdown} alt="" />
+            </div>
+          ) : (
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              className="btn create-account-btn d-lg-none"
+            >
+              <div>
+                <span>Create account. </span>
+              </div>
+
+              <img src={dropdown} alt="" />
+            </button>
+          )}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -35,18 +50,30 @@ const Navbar = () => {
               </li>
             </ul>
             <div className="d-flex">
-              <button
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                className="btn create-account-btn"
-              >
-                <div>
-                  Create account. <span>It’s free!</span>
+              {isAuthenticated ? (
+                <div className="d-flex gap-1 align-items-center">
+                  <div className="d-flex align-items-center gap-1">
+                    <div>
+                      <img src="https://iili.io/d33XaVI.png" alt="" />
+                    </div>
+                    <div className="authenticatedUserName">Siddharth Goyal</div>
+                  </div>
+                  <img src={dropdown} alt="" />
                 </div>
+              ) : (
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  className="btn create-account-btn"
+                >
+                  <div>
+                    Create account. <span>It’s free!</span>
+                  </div>
 
-                <img src={dropdown} alt="" />
-              </button>
+                  <img src={dropdown} alt="" />
+                </button>
+              )}
             </div>
           </div>
         </div>

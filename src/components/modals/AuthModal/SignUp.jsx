@@ -3,27 +3,35 @@ import { authImage, facebook, google } from "../../../assets/getAssets";
 import "./AuthModal.css";
 import useAuth from "../../../hooks/useAuth";
 
-const SignUp = ({handleView}) => {
-    const [passwordVisible, setPasswordVisible] = useState(false);
-    const togglePasswordVisibility = () => {
-      setPasswordVisible(!passwordVisible);
-    };
-    const { isAuthenticated } = useAuth();
+const SignUp = ({ handleView }) => {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+  const { signup } = useAuth();
+  const handleSignup = (e) => {
+    e.preventDefault();
+    const email = "ayan@gmail.com";
+    const password = "1234";
+    const confirmPassword = "1234";
+
+    signup(email, password, confirmPassword);
+  };
   return (
     <div className="modal-body">
       <div className="row">
         <div className="col-12 col-lg-6">
-          <div className="signup-title">Create Account</div>
-          <div className="form-subheading text-start d-lg-none">
-            Already have an account?{" "}
-            <span
-              className="cursor-pointer"
-              onClick={() => handleView("login")}
-            >
-              Sign In
-            </span>
+          <div className="d-flex justify-content-between">
+            <div className="signup-title">Create Account</div>
+            <button
+              type="button"
+              className="btn-close d-lg-none  bg-black rounded-full rounded-circle p-2 text-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <form action="">
+
+          <form action="" onSubmit={handleSignup}>
             <div className="form-group-input">
               <div className="d-flex">
                 <input type="text" className="w-50" placeholder="First Name" />
@@ -71,10 +79,22 @@ const SignUp = ({handleView}) => {
               </div>
             </div>
             <div className="form-button-group">
-              <div>
-                <button type="button" className="create-btn">
+              <div className="d-flex justify-content-between align-items-center">
+                <button
+                  data-bs-dismiss="modal"
+                  type="submit"
+                  className="create-btn"
+                >
                   Create Account
                 </button>
+                <div className="form-subheading text-start d-lg-none">
+                  <span
+                    className="cursor-pointer text-dark text-decoration-underline"
+                    onClick={() => handleView("login")}
+                  >
+                    Sign In
+                  </span>
+                </div>
               </div>
               <div className="social-buttons">
                 <button type="button" className="facbook-btn">
@@ -114,6 +134,6 @@ const SignUp = ({handleView}) => {
       </div>
     </div>
   );
-}
+};
 
-export default SignUp
+export default SignUp;

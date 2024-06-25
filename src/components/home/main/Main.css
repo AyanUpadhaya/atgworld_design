@@ -16,6 +16,7 @@
   --font-plex:"IBM Plex Sans", sans-serif;
   --leave-btn-border:#989899;
   --font-plex: "IBM Plex Sans", sans-serif;
+  --black-900:#212529;
 }
 a {
   text-decoration: none;
@@ -53,6 +54,12 @@ a {
 .drop-shadow-custom {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
 }
+.text-strong-heading{
+  color: var(--black-900);
+  font-size: 15px;
+  font-weight: 800;
+  font-family: var(--font-plex);
+}
 /* ****** */
 
 .max-w-container {
@@ -71,6 +78,13 @@ a {
 .filter-container {
   border-bottom: 1px solid var(--border-color-light);
   padding-bottom: 12px;
+ 
+}
+.filter-container-mobile {
+
+  padding-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
  
 }
 
@@ -103,7 +117,7 @@ a {
 
 .btn-cs-light {
   background-color: var(--btn-light-color);
-  width: 136px;
+  width: max-content;
   height: 36px;
   border-radius: 4px;
   outline: 0;
@@ -349,6 +363,20 @@ a {
   color: var(--btn-blue-color);
   font-family: var(--font-plex);
   font-size: 12px;
+}
+.join-btn{
+  border:1px solid #ffffff;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-plex);
+  padding: 10px 8px 6px 8px;
+  background-color: transparent;
+  min-width: 78px;
+}
+.dropdown-item{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 992px) {

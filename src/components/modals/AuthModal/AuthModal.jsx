@@ -10,10 +10,7 @@ const AuthModal = () => {
   const handleView = (viewName) => {
     setView(viewName);
   };
-  if (isAuthenticated) {
-    // Close modal if authenticated
-    document.getElementById("exampleModal").modal("hide");
-  }
+
 
   return (
     <div
@@ -27,13 +24,13 @@ const AuthModal = () => {
         <div className="d-flex justify-content-end mb-2 cursor-pointer  ">
           <button
             type="button"
-            className="btn-close bg-white rounded-full rounded-circle p-2"
+            className="btn-close d-none d-lg-block bg-white rounded-full rounded-circle p-2"
             data-bs-dismiss="modal"
             aria-label="Close"
           ></button>
         </div>
         <div className="modal-content ">
-          <div className="modal-header d-flex justify-content-center">
+          <div className="modal-header d-none d-lg-flex justify-content-center">
             <div>
               Let's learn, share & inspire each other with our passion for
               computer engineering. Sign up now 🤘🏼

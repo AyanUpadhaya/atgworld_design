@@ -46,7 +46,7 @@ export const postData = [
     webLink: "https://www.google.com/",
     coverImage: "https://iili.io/d2D6vRf.jpg",
     postAuthorName: "Joseph Gray",
-    postAuthorImage: "https://iili.io/d2D6OSs.png",
+    postAuthorImage: "https://iili.io/d33XaVI.png",
     viewCount: "1.4k",
     published_date: "Mon, 24 June,2024",
   },

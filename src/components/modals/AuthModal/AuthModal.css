@@ -23,8 +23,8 @@
   font-weight: 600;
   border: none !important;
 }
-.modal-body{
-    padding: 36px !important;
+.modal-body {
+  padding: 36px !important;
 }
 
 .signup-title {
@@ -73,83 +73,85 @@
   color: var(--pure-black);
   opacity: 60%;
 }
-.password-field{
-    position: relative;
-
+.password-field {
+  position: relative;
 }
-.visible-btn{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
+.visible-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
 }
-.visible-btn svg{
-    background-color: transparent !important;
-}
-
-.form-button-group{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
-}
-.social-buttons{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-}
-.create-btn{
-    padding: 12px 14px;
-    font-size: 14px;
-    font-family: var(--font-plex);
-    font-weight: 600;
-    border-radius: 24px;
-    background-color: var(--primary-blue);
-    color: #ffffff;
-    width: 100%;
-    border:0;
-    outline:0;
-}
-.facbook-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    padding: 12px 14px;
-    width: 100%;
-    border: 1px solid #D9D9DB;
-    border-radius: 8px;
-    background-color: transparent;
-
-}
-.google-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    padding: 12px 14px;
-    width: 100%;
-    border: 1px solid #D9D9DB;
-    border-radius: 8px;
-    background-color: transparent;
-
+.visible-btn svg {
+  background-color: transparent !important;
 }
 
-.authImage{
+.form-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.create-btn {
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: var(--font-plex);
+  font-weight: 600;
+  border-radius: 24px;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  width: 100%;
+  border: 0;
+  outline: 0;
+}
+.facbook-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 14px;
+  width: 100%;
+  border: 1px solid #d9d9db;
+  border-radius: 8px;
+  background-color: transparent;
+}
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 14px;
+  width: 100%;
+  border: 1px solid #d9d9db;
+  border-radius: 8px;
+  background-color: transparent;
+}
 
-    width: 100%;
-    object-fit: cover;
+.authImage {
+  width: 100%;
+  object-fit: cover;
 }
 
 /* utils */
-.cursor-pointer{
-    cursor: pointer !important;
+.cursor-pointer {
+  cursor: pointer !important;
 }
-.btn-close{
-    position: relative;
-    right: -10px;
+.btn-close {
+  position: relative;
+  right: -10px;
+}
+
+@media screen and (max-width: 992px) {
+  .create-btn {
+    width: 60%;
+  }
 }

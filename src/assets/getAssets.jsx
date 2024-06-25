@@ -18,6 +18,7 @@ import authImage from "./imags/authImage.png";
 import google from "./imags/google.png";
 import facebook from "./imags/facebook.png";
 import leave from "./imags/leave.png";
+import foatingbutton from "./imags/foatingbutton.png";
 
 export {
   banner,
@@ -40,4 +41,5 @@ export {
   google,
   facebook,
   leave,
+  foatingbutton,
 };

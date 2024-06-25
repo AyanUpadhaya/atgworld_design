@@ -1,5 +1,6 @@
 import Header from "../components/home/Header/Header"
 import Main from "../components/home/main/Main"
+import FloatingButton from "../components/shared/Navbar/FloatingButton/FloatingButton"
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
   <div>
     <Header></Header>
     <Main></Main>
+    <FloatingButton />
   </div>
  )
 }

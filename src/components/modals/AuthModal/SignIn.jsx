@@ -8,22 +8,28 @@ const SignIn = ({ handleView }) => {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-  const { isAuthenticated } = useAuth();
+  const { login } = useAuth();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = "ayan@gmail.com";
+    const password = "1234";
+    login(email, password);
+  };
   return (
     <div className="modal-body">
       <div className="row">
         <div className="col-12 col-lg-6">
-          <div className="signup-title">Sign In</div>
-          <div className="form-subheading text-start d-lg-none">
-            Don’t have an account yet?{" "}
-            <span
-              className="cursor-pointer"
-              onClick={() => handleView("register")}
-            >
-              Create new for free!
-            </span>
+          <div className="d-flex justify-content-between">
+            <div className="signup-title">Sign In</div>
+            <button
+              type="button"
+              className="btn-close d-lg-none  bg-black rounded-full rounded-circle p-2 text-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <form action="">
+
+          <form onSubmit={handleLogin}>
             <div className="form-group-input">
               <div>
                 <input type="email" className="w-100" placeholder="Email" />
@@ -60,10 +66,22 @@ const SignIn = ({ handleView }) => {
               </div>
             </div>
             <div className="form-button-group">
-              <div>
-                <button type="button" className="create-btn">
+              <div className="d-flex justify-content-between align-items-center">
+                <button
+                  data-bs-dismiss="modal"
+                  type="submit"
+                  className="create-btn"
+                >
                   Sign In
                 </button>
+                <div className="form-subheading text-start d-lg-none">
+                  <span
+                    className="cursor-pointer text-dark text-decoration-underline"
+                    onClick={() => handleView("register")}
+                  >
+                    Sign up
+                  </span>
+                </div>
               </div>
               <div className="social-buttons">
                 <button type="button" className="facbook-btn">

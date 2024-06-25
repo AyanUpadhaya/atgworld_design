@@ -11,12 +11,14 @@ import {
 import { postData, groupData } from "../../../fakedb/db";
 import PostList from "./PostList";
 import AuthModal from "../../modals/AuthModal/AuthModal";
+import useAuth from "../../../hooks/useAuth";
 
 const Main = () => {
   const [categoryNumber, setCategoryNumber] = useState(1);
   const [selectedTab, setSelectedTab] = useState("all");
   const [myGroupData, setMyGroupData] = useState(groupData);
   const [isJoined, setIsJoined] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   const handleFollowAndUnfollow = (groupId) => {
     const updatedGroupData = myGroupData.map((group) =>
@@ -38,6 +40,56 @@ const Main = () => {
   return (
     <div className=" max-w-container top-padding-32  mb-5">
       <div className="main-content">
+        <div className="filter-container-mobile d-flex d-md-none justify-content-between align-items-center flex-wrap">
+          <div className={`text-strong-heading`}>
+            Posts ({postData?.length})
+          </div>
+          <button
+            className="btn btn-cs-light dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <div>
+              Filter: <span className="text-capitalize">{selectedTab}</span>
+            </div>
+            <img src={dropdownlight} alt="" />
+          </button>
+          <ul className="dropdown-menu dropdown-menu-end">
+            <li>
+              <div
+                onClick={() => setSelectedTab("all")}
+                className="dropdown-item"
+              >
+                All
+              </div>
+            </li>
+            <li>
+              <div
+                onClick={() => setSelectedTab("article")}
+                className="dropdown-item"
+              >
+                Article
+              </div>
+            </li>
+            <li>
+              <div
+                onClick={() => setSelectedTab("event")}
+                className="dropdown-item"
+              >
+                Event
+              </div>
+            </li>
+            <li>
+              <div
+                onClick={() => setSelectedTab("education")}
+                className="dropdown-item"
+              >
+                Education
+              </div>
+            </li>
+          </ul>
+        </div>
         <div className="row gap-5 gap-lg-0 filter-container  ">
           <div className="col-12 col-lg-8 d-flex flex-column justify-content-center p-0 m-0 sidebar ">
             <ul className="list-unstyled tab-list my-auto">
@@ -157,7 +209,7 @@ const Main = () => {
                 personalised experience.
               </div>
             </div>
-            <div className="recommended-groups-container">
+            <div className={`recommended-groups-container ${isAuthenticated?'d-block':'d-none'}`}>
               <div className="d-flex gap-1 align-items-center mb-24">
                 <div>
                   <svg

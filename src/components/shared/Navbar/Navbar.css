@@ -42,6 +42,11 @@
   color: var(--black-600);
 
 }
+.authenticatedUserName{
+  font-size: 14px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+}
 
 .create-account-btn{
     color: var(--black-900);
