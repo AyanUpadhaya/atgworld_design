@@ -40,7 +40,7 @@ const Main = () => {
   return (
     <div className=" max-w-container top-padding-32  mb-5">
       <div className="main-content">
-        <div className="filter-container-mobile d-flex d-md-none justify-content-between align-items-center flex-wrap">
+        <div className="filter-container-mobile d-flex d-lg-none justify-content-between align-items-center flex-wrap">
           <div className={`text-strong-heading`}>
             Posts ({postData?.length})
           </div>
